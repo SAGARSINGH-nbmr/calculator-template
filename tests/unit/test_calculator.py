@@ -1,6 +1,7 @@
 import pytest
 from src.calculator import add, subtract, multiply, divide, power, sqrt
 
+
 class TestBasicOperations:
     def test_add_positive_numbers(self):
         assert add(2, 3) == 5
@@ -49,5 +50,7 @@ class TestAdvancedOperations:
         assert sqrt(16) == 4
 
     def test_square_root_negative_raises_error(self):
-        with pytest.raises(ValueError, match="Cannot take square root of negative number"):
+        with pytest.raises(
+            ValueError, match="Cannot take square root of negative number"
+        ):
             sqrt(-4)
